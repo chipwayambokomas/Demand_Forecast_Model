@@ -1,21 +1,21 @@
 import pandas as pd
 
 # --- Configuration ---
-EXCEL_FILE_PATH = 'data/raw_sales_inventory_data.xlsx' # Replace with your actual file path
+EXCEL_FILE_PATH = 'data/raw_sales_inventory_data.xlsx' 
 
 # Sheet names
-SALES_SHEET_NAME = 'Sales'         # Replace with the name of your sales sheet
-INVENTORY_SHEET_NAME = 'Inventory' # Replace with the name of your inventory sheet
+SALES_SHEET_NAME = 'Sales'         
+INVENTORY_SHEET_NAME = 'Inventory' 
 
 # Column names in the SALES sheet
-SALES_DATE_COLUMN = 'Shipment Date'             # Replace with the actual date column name in sales sheet
-SALES_FNSKU_COLUMN = 'FNSKU'           # Replace with the actual FNSKU column name in sales sheet
-SALES_VALUE_COLUMN = 'Shipped Quantity'      # Replace with the column representing sales figures
+SALES_DATE_COLUMN = 'Shipment Date'             
+SALES_FNSKU_COLUMN = 'FNSKU'           
+SALES_VALUE_COLUMN = 'Shipped Quantity'      
 
 # Column names in the INVENTORY sheet
-INVENTORY_DATE_COLUMN = 'Date'         # Replace with the actual date column name in inventory sheet
-INVENTORY_FNSKU_COLUMN = 'FNSKU'       # Replace with the actual FNSKU column name in inventory sheet
-INVENTORY_VALUE_COLUMN = 'Ending Warehouse Balance'   # Replace with the column representing inventory level
+INVENTORY_DATE_COLUMN = 'Date'         
+INVENTORY_FNSKU_COLUMN = 'FNSKU'       
+INVENTORY_VALUE_COLUMN = 'Ending Warehouse Balance'   
 # --- End Configuration ---
 
 # --- Desired Output Column Names ---
@@ -121,7 +121,7 @@ def merge_and_structure_data(sales_df, inventory_df):
     # Ensure all desired columns are present (some might be missing if one df was empty before merge)
     for col in desired_column_order:
         if col not in merged_df.columns:
-            merged_df[col] = pd.NA # Or some other default like 0 or an empty string
+            merged_df[col] = pd.NA 
 
     merged_df = merged_df[desired_column_order].reset_index(drop=True)
 
