@@ -1,6 +1,6 @@
 import pandas as pd
 
-# --- Configuration (USER MUST UPDATE THESE) ---
+# --- Configuration ---
 EXCEL_FILE_PATH = 'data/raw_sales_inventory_data.xlsx' # Replace with your actual file path
 
 # Sheet names
